@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
     var timer: Timer? // 計時器
     var secondsRemaining = 5 // 總秒數 25 分鐘 x 60 秒 = 1500 秒，為了方便測試先用 5 秒
     let totalSeconds = 5 // 計算進度條的總秒數
+    var player: AVAudioPlayer!
     
     override func viewDidLoad() {
             super.viewDidLoad()
@@ -31,16 +33,21 @@ class ViewController: UIViewController {
     // 計時器控制開始和暫停
     @IBAction func controlButtonPressed(_ sender: UIButton) {
         
-        if timer == nil{
-            startTimer()
-            controlButton.setTitle("暫停", for: .normal)
-        }else {
-            stopTimer()
-            controlButton.setTitle("開始", for: .normal)
-            
+        if timer == nil {
+                if secondsRemaining == 0 {
+                    // Reset the timer to the default value
+                    secondsRemaining = totalSeconds
+                    updateUI()
+                    controlButton.setTitle("開始專注", for: .normal)
+                } else {
+                    startTimer()
+                    controlButton.setTitle("停止", for: .normal)
+                }
+            } else {
+                stopTimer()
+                controlButton.setTitle("重新開始", for: .normal)
+            }
         }
-        
-    }
     
     // 開始計時
     func startTimer(){
@@ -51,6 +58,7 @@ class ViewController: UIViewController {
             }else{
                 
                 self.textLabel.text = "時間到！"
+                self.playSound()  //播放聲音
                 self.stopTimer() //時間到，停止計時
                 
             }
@@ -68,6 +76,9 @@ class ViewController: UIViewController {
         // 將文字格式設定為 MM:SS
         countdownLabel.text = "\(secondsRemaining / 60):\(String(format: "%02d", secondsRemaining % 60))"
         
+        // 更新 progressBar 的進度
+            progressBar.progress = 1.0 - Float(secondsRemaining) / Float(totalSeconds)
+        
     }
     
     
@@ -78,6 +89,22 @@ class ViewController: UIViewController {
         timer = nil
         
     }
+    
+    
+    //播放聲音
+    func playSound() {
+        if let url = Bundle.main.url(forResource: "nature-soundstropicaljunglebirds", withExtension: "mp3") {
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player.play()
+            } catch {
+                print("音檔播放錯誤: \(error.localizedDescription)")
+            }
+        } else {
+            print("未找到音檔")
+        }
+    }
+
         
             
 }

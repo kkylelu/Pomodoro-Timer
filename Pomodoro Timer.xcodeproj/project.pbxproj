@@ -16,6 +16,7 @@
 		2786E7D92AC484E500292DB3 /* Pomodoro_TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2786E7D82AC484E500292DB3 /* Pomodoro_TimerTests.swift */; };
 		2786E7E32AC484E500292DB3 /* Pomodoro_TimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2786E7E22AC484E500292DB3 /* Pomodoro_TimerUITests.swift */; };
 		2786E7E52AC484E500292DB3 /* Pomodoro_TimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2786E7E42AC484E500292DB3 /* Pomodoro_TimerUITestsLaunchTests.swift */; };
+		27ECC4592ACD8F5200646B87 /* nature-soundstropicaljunglebirds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27ECC4582ACD8F5200646B87 /* nature-soundstropicaljunglebirds.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		2786E7DE2AC484E500292DB3 /* Pomodoro TimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pomodoro TimerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2786E7E22AC484E500292DB3 /* Pomodoro_TimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pomodoro_TimerUITests.swift; sourceTree = "<group>"; };
 		2786E7E42AC484E500292DB3 /* Pomodoro_TimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pomodoro_TimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		27ECC4582ACD8F5200646B87 /* nature-soundstropicaljunglebirds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "nature-soundstropicaljunglebirds.mp3"; path = "../../../../../../Users/kyle/Downloads/nature-soundstropicaljunglebirds.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				2786E7CA2AC484E500292DB3 /* Assets.xcassets */,
 				2786E7CC2AC484E500292DB3 /* LaunchScreen.storyboard */,
 				2786E7CF2AC484E500292DB3 /* Info.plist */,
+				27ECC4582ACD8F5200646B87 /* nature-soundstropicaljunglebirds.mp3 */,
 			);
 			path = "Pomodoro Timer";
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2786E7CE2AC484E500292DB3 /* LaunchScreen.storyboard in Resources */,
+				27ECC4592ACD8F5200646B87 /* nature-soundstropicaljunglebirds.mp3 in Resources */,
 				2786E7CB2AC484E500292DB3 /* Assets.xcassets in Resources */,
 				2786E7C92AC484E400292DB3 /* Main.storyboard in Resources */,
 			);
